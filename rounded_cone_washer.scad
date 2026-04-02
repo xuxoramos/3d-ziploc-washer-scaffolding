@@ -2,16 +2,25 @@
 // Rounded Cone Washer Scaffold for Ziploc Bags
 // ============================================================
 // A dishwasher-safe mesh cone scaffold for holding Ziploc bags
-// open during a dishwasher cycle.
+// open during a dishwasher cycle – designed for the BOTTOM RACK.
 //
-// Recommended materials:
-//   - PETG (preferred): Heat-resistant to ~80°C, BPA-free,
-//     food-safe grades available, good chemical resistance.
-//   - ASA: UV and heat resistant, excellent dishwasher
-//     durability (up to 95°C).
-//   - High-temp PLA (e.g. PLA+): Usable if only on the top
-//     rack; standard PLA softens at ~60°C and is NOT
-//     recommended for the dishwasher.
+// Dishwasher usage (INVERTED orientation):
+//   1. Place the scaffold INVERTED (large opening facing DOWN) in
+//      the BOTTOM rack.  The rounded large rim rests on the tines
+//      and protects the bag seal.
+//   2. Push the cone inside a Ziploc bag so the bag opening faces
+//      DOWNWARD, stretched over the rounded large rim.
+//   3. Run on a normal or eco cycle.  Mesh holes allow free water
+//      flow; the narrow top lets water drain back down.
+//
+// Recommended materials (bottom rack – up to 65–70 °C):
+//   - ASA (preferred): Best for bottom rack. Heat-resistant to
+//     ~95°C, excellent UV stability, handles repeated cycles.
+//   - PETG: Good all-round choice. Heat-resistant to ~80°C,
+//     food-safe grades available; comfortable margin above
+//     bottom-rack temperatures.
+//   - PLA / PLA+: NOT suitable – bottom-rack temperatures
+//     exceed PLA's heat-deflection point; parts will warp.
 //
 // Recommended print settings:
 //   - Layer height: 0.2 mm
@@ -19,12 +28,14 @@
 //   - Perimeters/walls: 3
 //   - Supports: None required
 //   - Bed adhesion: Brim (5 mm) recommended
-//   - Print orientation: Upright (large opening facing up)
+//   - Print orientation: Upright (large opening facing UP for a
+//     stable print footprint); flip the part when loading into
+//     the dishwasher.
 // ============================================================
 
 // ── Parametric dimensions ────────────────────────────────────
-top_diameter    = 130;   // mm – opening at the top (fits gallon Ziploc)
-bottom_diameter =  50;   // mm – opening at the bottom (drainage)
+top_diameter    = 130;   // mm – large opening (bag-opening end; faces DOWN in use)
+bottom_diameter =  50;   // mm – narrow drainage opening (faces UP in use)
 cone_height     = 160;   // mm – overall height of the cone
 wall_thickness  =   2;   // mm – shell thickness
 edge_radius     =   4;   // mm – rounding radius on the top rim

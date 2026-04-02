@@ -4,9 +4,19 @@ rounded_cone_washer.py
 Generates an STL file for the rounded-cone Ziploc-bag dishwasher scaffold.
 
 The model is a truncated cone (frustum) with:
-  - A rounded top rim
+  - A rounded large rim (the bag-opening end, faces DOWN in use)
   - Honeycomb-offset circular mesh holes on the lateral surface
-  - A thin bottom drainage ring
+  - A thin narrow drainage ring at the top (faces UP in use)
+
+Usage in the dishwasher
+-----------------------
+  1. Place the scaffold INVERTED (large opening facing DOWN) in the BOTTOM
+     rack of your dishwasher.  The rounded large rim rests on the rack tines.
+  2. Push the cone inside a Ziploc bag so the bag opening faces DOWNWARD and
+     stretches over the rounded large rim – the rounding protects the bag seal.
+  3. Run the dishwasher on a normal or eco cycle.
+  4. Mesh holes allow water/detergent to flow freely; the narrow top lets
+     water drain back down.
 
 Requirements
 ------------
@@ -17,12 +27,17 @@ Usage
     python3 rounded_cone_washer.py
     # Writes 'rounded_cone_washer.stl' in the current directory.
 
-Recommended print materials (dishwasher-safe)
----------------------------------------------
-  * PETG        – Best all-round choice. Heat-resistant to ~80 °C, food-safe
-                  grades available, minimal warping.
-  * ASA         – Excellent heat resistance (up to 95 °C) and UV stability.
-  * High-temp PLA (PLA+) – Top rack only; standard PLA softens near 60 °C.
+Recommended print materials (dishwasher-safe – bottom rack)
+-----------------------------------------------------------
+  Bottom-rack water temperatures routinely reach 65–70 °C; only high
+  heat-deflection materials are suitable.
+
+  * ASA         – Best choice for bottom rack. Heat-resistant to ~95 °C,
+                  excellent UV stability, handles repeated bottom-rack cycles.
+  * PETG        – Good all-round choice. Heat-resistant to ~80 °C, food-safe
+                  grades available; comfortable margin above bottom-rack temps.
+  * PLA / PLA+  – NOT suitable. Bottom-rack temperatures exceed PLA's
+                  heat-deflection point; parts will warp or soften.
 
 Print settings
 --------------
@@ -31,6 +46,8 @@ Print settings
   * Infill        : 20–30 % Gyroid or Honeycomb
   * Supports      : None (print upright, large opening up)
   * Bed adhesion  : 5 mm Brim
+  * Note          : Print with large opening facing UP for a stable footprint;
+                    flip the part when loading it into the dishwasher.
 """
 
 import math
@@ -347,19 +364,24 @@ def main():
     print()
     print("─" * 60)
     print("Recommended materials for dishwasher-safe printing")
+    print("(Bottom rack – up to 65–70 °C)")
     print("─" * 60)
-    print("  PETG  : ★★★★★  Best choice – heat-safe to ~80 °C,")
+    print("  ASA   : ★★★★★  Best for bottom rack – heat-safe to ~95 °C,")
+    print("                  excellent UV & heat resistance.")
+    print("  PETG  : ★★★★☆  Good choice – heat-safe to ~80 °C,")
     print("                  food-safe grades available.")
-    print("  ASA   : ★★★★☆  Excellent heat & UV resistance (to 95 °C).")
-    print("  PLA+  : ★★☆☆☆  Top rack only; standard PLA not suitable.")
+    print("  PLA+  :   ✗    NOT suitable – bottom-rack temps exceed PLA's")
+    print("                  heat-deflection point; parts will warp.")
     print()
     print("Print settings")
     print("─" * 60)
     print("  Layer height : 0.20 mm")
     print("  Wall count   : 3")
     print("  Infill       : 20–30 % Gyroid")
-    print("  Supports     : None (print upright)")
+    print("  Supports     : None (print upright, large opening up)")
     print("  Bed adhesion : 5 mm Brim")
+    print("  Dishwasher   : Place INVERTED (large opening DOWN) in BOTTOM rack.")
+    print("                 Insert bag over cone so bag opening faces DOWN.")
     print("─" * 60)
 
 

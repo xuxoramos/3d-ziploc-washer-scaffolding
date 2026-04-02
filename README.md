@@ -19,43 +19,46 @@ bag.
 
 ## Model overview
 
+The cone is used **inverted** – large opening facing down.  The bag opening
+stretches over the rounded bottom rim; the narrow top lets water drain freely.
+
 ```
-        ╭───────────────╮   ← Rounded top rim (Ø 130 mm)
-       /                 \
-      /   ○  ○  ○  ○  ○   \   ← Mesh holes (Ø 8 mm, 6 rows × 16 cols,
-     /  ○  ○  ○  ○  ○  ○   \    honeycomb offset) for water flow
-    /                       \
-   /    ○  ○  ○  ○  ○  ○    \
-  /───────────────────────────\
-        ╰──────╯              ← Bottom drainage ring (Ø 50 mm)
+          ╭──────╮            ← Top drainage opening (Ø 50 mm)
+          |      |
+           \    /
+            \○○/   ← Mesh holes (Ø 8 mm, 6 rows × 16 cols,
+           / ○  ○ \    honeycomb offset) for water flow
+          / ○  ○  ○\
+         /  ○  ○  ○ \
+        /─────────────\
+  ╰─────────────────────╯   ← Rounded bottom rim (Ø 130 mm) – bag opening here
 ```
 
 Key dimensions (all parametric):
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `top_diameter` | 130 mm | Opening at top (fits gallon Ziploc bag) |
-| `bottom_diameter` | 50 mm | Drainage opening at bottom |
+| `top_diameter` | 130 mm | Large opening (bag opening end; faces **down** in use) |
+| `bottom_diameter` | 50 mm | Narrow drainage opening (faces **up** in use) |
 | `cone_height` | 160 mm | Overall height |
 | `wall_thickness` | 2 mm | Shell thickness |
-| `edge_radius` | 4 mm | Rounding radius on the top rim |
+| `edge_radius` | 4 mm | Rounding radius on the large rim (protects bag seal) |
 | `hole_diameter` | 8 mm | Diameter of each mesh hole |
 | `hole_rows` | 6 | Rows of holes along the height |
 | `hole_cols` | 16 | Holes around the circumference |
 
 ---
 
-## Recommended materials (dishwasher-safe)
+## Recommended materials (dishwasher-safe – bottom rack)
+
+Bottom-rack water temperatures routinely reach 65–70 °C, so only high
+heat-deflection materials are suitable.
 
 | Material | Heat resistance | Notes | Rating |
 |----------|----------------|-------|--------|
-| **PETG** | ~80 °C | Best all-round choice. Food-safe grades available, minimal warping. | ★★★★★ |
-| **ASA** | ~95 °C | Excellent UV & heat resistance, ideal for repeated dishwasher cycles. | ★★★★☆ |
-| **PLA+** (High-temp) | ~65 °C | Top rack only. Standard PLA softens near 60 °C and is **not** suitable. | ★★☆☆☆ |
-
-> **Why not ABS?**  ABS is technically heat-resistant enough, but it emits
-> potentially harmful fumes during printing, warps easily, and is not
-> food-safe.  PETG or ASA are better choices.
+| **ASA** | ~95 °C | **Best choice for bottom rack.** Excellent UV & heat resistance, handles repeated bottom-rack cycles without deformation. | ★★★★★ |
+| **PETG** | ~80 °C | Good all-round choice. Food-safe grades available; handles bottom-rack temperatures with a comfortable margin. | ★★★★☆ |
+| **PLA / PLA+** | ~60–65 °C | **Not suitable** – bottom-rack temperatures exceed PLA's heat-deflection point. Parts will warp or soften. | ✗ |
 
 ---
 
@@ -69,7 +72,7 @@ Key dimensions (all parametric):
 | Infill density | 20–30 % |
 | Supports | **None** (print upright, large opening facing up) |
 | Bed adhesion | 5 mm Brim |
-| Print orientation | Upright (large opening at top) |
+| Print orientation | Upright (large opening at top for a stable footprint); flip when loading into the dishwasher |
 
 ---
 
@@ -96,8 +99,12 @@ Edit the constants near the top of `rounded_cone_washer.py` to change dimensions
 
 ## Usage
 
-1. Place the scaffold (large opening up) in the top rack of your dishwasher.
-2. Invert a Ziploc bag over the cone so the bag opening stretches over the
-   top rim – the rounded edge protects the bag seal.
+1. Place the scaffold **inverted** (large opening facing **down**) in the
+   **bottom rack** of your dishwasher.  The rounded large rim rests stably on
+   the rack tines and doubles as the bag-opening protector.
+2. Insert a Ziploc bag **over the cone from above**, pushing the cone inside
+   the bag, so the **bag opening faces downward** and stretches over the
+   rounded bottom rim – the rounded edge protects the bag seal.
 3. Run the dishwasher on a normal or eco cycle.
-4. The mesh holes allow water and detergent to flow freely through the bag.
+4. The mesh holes allow water and detergent to flow freely through the bag
+   from all sides; the narrow top opening lets water drain back down.
